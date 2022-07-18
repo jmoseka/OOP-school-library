@@ -1,4 +1,4 @@
-class Animal
+class Person
   attr_accessor :name, :age
   attr_reader :id
 
@@ -7,5 +7,11 @@ class Animal
     @name = name
     @age = age
     @parent_permission = parent_permission
+  end
+
+  def can_use_services?
+    if age || @parent_permission
+      true
+    end
   end
 end
