@@ -1,8 +1,8 @@
 class Person
-  def initialize
+  def initialize(name = "Unknown", age, parent_permission = true)
+    @name = name
+    @age = age
     @id = "#{('a'..'z').to_a.sample} #{rand(1...100)}"
-    @name = "User #{rand(1..100)}"
-    @age = rand(18..100).to_s
   end
 
   # getter and setter method
