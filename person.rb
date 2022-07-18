@@ -1,3 +1,5 @@
+# rubocop:disable Naming/PredicateName
+
 class Person
   attr_accessor :name, :age
   attr_reader :id
@@ -12,4 +14,11 @@ class Person
   def can_use_services?
     true if age || @parent_permission
   end
+
+  private
+
+  def is_of_age?
+    age >= 18
+  end
 end
+# rubocop:enable Naming/PredicateName
