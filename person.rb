@@ -5,9 +5,7 @@ class Person
     @age = rand(18..100).to_s
   end
 
-  # getter method
+  # getter and setter method
   attr_reader :id
-
-  attr_reader :name, :age
-  # ----------end---------
+  attr_accessor :name, :age
 end
