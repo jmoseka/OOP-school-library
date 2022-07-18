@@ -1,11 +1,11 @@
-class Person
-  def initialize(name = "Unknown", age, parent_permission = true)
+class Animal
+  attr_accessor :name, :age
+  attr_reader :id
+
+  def initialize(age, name = 'Unknown', parent_permission: true)
+    @id = Random.rand(1..1000)
     @name = name
     @age = age
-    @id = "#{('a'..'z').to_a.sample} #{rand(1...100)}"
+    @parent_permission = parent_permission
   end
-
-  # getter and setter method
-  attr_reader :id
-  attr_accessor :name, :age
 end
