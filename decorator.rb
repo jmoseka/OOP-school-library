@@ -5,14 +5,13 @@ require './nameable'
 # include a field for storing a wrapped component and the means to initialize
 # it.
 class Decorator < Nameable
-    attr_accessor :component
-    super()
-    initialize(nameable)
-      @nameable = nameable
-    end
-  
-    # The Decorator delegates all work to the wrapped component.
-    def correct_name
-      @nameable.correct_name.upcase
-    end
-  end
+  attr_accessor :nameable
+
+  initialize(nameable)
+  @nameable = nameable
+end
+
+# The Decorator delegates all work to the wrapped component.
+def correct_name
+  @nameable
+end
