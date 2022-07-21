@@ -4,5 +4,10 @@ class Book
   def initialize(title, author)
     @title = title
     @author = author
+    @rental = []
+  end
+
+  def many()
+    @rental << rental
   end
 end
