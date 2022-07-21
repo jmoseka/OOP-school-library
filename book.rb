@@ -7,14 +7,8 @@ class Book
     @rental = []
   end
 
-  # book has many rental
-  def add_rental(rental)
-    @rental << rental
-    student.classroom = self
-
-    # a rental belongs to a book
-    # saving the current rental object refered to as self
-    # to the book objects rental variable
-    book.rental = self
+  def add_rental(person, date)
+    Rental.new(date, self, person)
   end
+
 end
