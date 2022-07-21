@@ -16,4 +16,8 @@ class Rental
     # a rental belongs to a person
     person.rental << self
   end
+
+  def add_rental(book, date)
+    Rental.new(date, book, self)
+  end
 end
