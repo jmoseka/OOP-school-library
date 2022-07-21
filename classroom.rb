@@ -6,6 +6,7 @@ class Classroom
     @student = []
   end
 
+  # classroom has many student
   def many(student)
     # saving each student object in an array
     @student << student
