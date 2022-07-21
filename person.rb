@@ -31,6 +31,11 @@ class Person < Nameable
   end
 end
 
+# a person has many rentals)
+def add_rental(book, date)
+  Rental.new(date, book, self)
+end
+
 person = Person.new(22, 'maximilianus')
 p person.correct_name
 capitalized_person = capitalize_decorator.new(person)
