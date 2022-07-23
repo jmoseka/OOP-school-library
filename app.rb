@@ -2,6 +2,7 @@ require_relative './book'
 require_relative './teacher'
 require_relative './student'
 require_relative './rental'
+
 class App
   def initialize
     @books = []
@@ -54,14 +55,14 @@ class App
       check(option)
       puts
     end
-    puts 'Quit'
+    puts 'GOOD BYE'
   end
 
   def fetch_books
     key = 0
     puts
     puts 'Books'
-    puts 'No book available!' if @books.empty?
+    puts 'No book available! Choose (4) to  create one' if @books.empty?
     @books.each do |book|
       puts "#{key}- Title: #{book.title} Author: #{book.author}"
       key += 1
@@ -72,7 +73,7 @@ class App
     key = 0
     puts
     puts 'People'
-    puts 'No people available! Choose to create a person ' if @people.empty?
+    puts 'No people available! Choose (3) to create a person ' if @people.empty?
     @people.each do |person|
       print "#{key}- [#{person.class.name}] ID: #{person.id} Name: #{person.name} Age: #{person.age} "
       print "Parent Permission: #{person.parent_permission}" if person.is_a?(Student)
