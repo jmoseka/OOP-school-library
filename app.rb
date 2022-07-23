@@ -67,6 +67,17 @@ class App
         puts 'create teacher'
       end
 
+      def create_student
+        print 'Age: '
+        age = gets.chomp
+        print 'Name: '
+        name = gets.chomp
+        print 'Has parent permission? [Y/N]: '
+        parent_permission = gets.chomp != 'n'
+        st = Student.new(age, name, parent_permission)
+        @persons << st
+        puts 'create student'
+      end
 
 end
 
