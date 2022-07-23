@@ -56,6 +56,17 @@ class App
         run
       end
 
-      
+      def create_teacher
+        print 'Age: '
+        age = gets.chomp
+        print 'Name: '
+        name = gets.chomp
+        print 'Specialization: '
+        specialization = gets.chomp
+        @persons << Teacher.new(age, name, specialization)
+        puts 'create teacher'
+      end
+
+
 end
 
