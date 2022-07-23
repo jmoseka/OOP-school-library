@@ -1,6 +1,4 @@
-def main
-  puts 'Welcome to School Librabry App!'
-  puts ''
+def select_options
   puts 'Please choose an option by entering a number:'
   puts '1 - List all books'
   puts '2 - List all people'
@@ -9,21 +7,22 @@ def main
   puts '5 - Create a rental'
   puts '6 - List all rentals for a given person id'
   puts '7 - Exit'
+  puts ''
+end
 
-  input = gets
-  input = input.to_i
+def main
+  puts 'Welcome to School Librabry App!'
+  puts ''
 
-  if input == 3
-    choose = ''
-    puts "Do you want to create a student (1) or a teacher (2) [Input the number]: #{choose = gets.chmod}"
-    choose = input.to_i
+  input = nil
 
-    if choose == 1
-        puts "one is selected"
-    else
-        puts "two is selected"
-    end
+  while input != 7
+    select_options
+    input = gets.chomp.to_i
+
+    # code to be executed
   end
+
 end
 
 main
