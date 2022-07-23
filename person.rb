@@ -35,10 +35,3 @@ end
 def add_rental(book, date)
   Rental.new(date, book, self)
 end
-
-person = Person.new(22, 'maximilianus')
-p person.correct_name
-capitalized_person = capitalize_decorator.new(person)
-p capitalized_person.correct_name
-capitalized_trimmed_person = trimmer_decorator.new(capitalized_person)
-p capitalized_trimmed_person.correct_name
