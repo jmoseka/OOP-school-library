@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/CyclomaticComplexity, Metrics/ClassLength
 require_relative './book'
 require_relative './teacher'
 require_relative './student'
@@ -177,5 +178,4 @@ class App
     end
   end
 end
-
 # rubocop:enable Metrics/CyclomaticComplexity, Metrics/ClassLength
