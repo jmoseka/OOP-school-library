@@ -106,5 +106,58 @@ class App
         puts('Book created successfully!')
         run
       end
+
+
+      def handled_rental(selected_book, selected_person, selected_date)
+        @rentals << Rental.new(@books[selected_book], @persons[selected_person], selected_date)
+    
+        puts('Rental created')
+        puts
+        run
+      end
+    
+      def create_rental
+        if @books.length.positive? && @persons.length.positive?
+          puts
+          puts('Select a book from the following list by number')
+    
+          @books.each_with_index { |book, index| puts("#{index}) Title: #{book.title} Author: #{book.author}") }
+          puts
+          selected_book = gets.chomp.to_i
+    
+          puts('Select a user from the following list by number(not id)')
+          @persons.each_with_index do |person, index|
+            puts("#{index}) [#{person.class}]  Name: #{person.name}  ID: #{person.id}  Age: #{person.age}")
+          end
+          selected_person = gets.chomp.to_i
+    
+          print('Date: ')
+          selected_date = gets.chomp.to_s
+          puts
+          handled_rental(selected_book, selected_person, selected_date)
+        else
+          puts 'No books or no persons yet!'
+          run
+        end
+      end
+    
+      # '6 - List all rentals for a given person id',
+      def rentals_list
+        puts('Rentals: ')
+        puts
+        print('ID of person: ')
+        selected_id = gets.chomp.to_i
+        puts('Rentals: ')
+    
+        @rentals.each do |rental|
+          # binding.pry
+          next unless rental.person.id == selected_id
+    
+          puts
+          puts("Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}")
+          puts
+        end
+        run
+      end
 end
 
