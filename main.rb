@@ -4,7 +4,7 @@ def main
   puts 'Welcome to School Librabry App!'
   puts ''
   app = App.new
-  app.run
+  app.menu
 end
 
 main
