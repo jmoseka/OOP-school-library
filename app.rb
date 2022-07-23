@@ -1,9 +1,15 @@
-# List all books.
-# List all people.
-# Create a person (teacher or student, not a plain Person).
-# Create a book.
-# Create a rental.
-# List all rentals for a given person id.
+require_relative './book'
+require_relative './teacher'
+require_relative './student'
+require_relative './rental'
+
+class App
+    def initialize
+      @persons = []
+      @books = []
+      @rentals = []
+    end
+end
 
 def list_all_books; end
 
