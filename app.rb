@@ -49,6 +49,17 @@ class App
     gets.chomp.to_i
   end
 
+  def books_list
+    if @books.length.positive?
+      @books.each do |book|
+        puts " Title: #{book.title}, Author: #{book.author}"
+      end
+    else
+      puts 'No books added yet!'
+    end
+    run
+  end
+
   def person_list
     @persons.each do |individual|
       puts "[#{individual.class}]id: #{individual.id}, Name: #{individual.name}, Age: #{individual.age}"
