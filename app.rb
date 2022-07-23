@@ -57,7 +57,7 @@ class App
     else
       puts 'No books added yet!'
     end
-    run
+    menu
   end
 
   def person_list
