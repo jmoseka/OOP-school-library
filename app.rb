@@ -97,6 +97,14 @@ class App
         run
       end
     
-
+      def create_book
+        print('Title: ')
+        title = gets.chomp
+        print('Author: ')
+        author = gets.chomp
+        @books << Book.new(title, author)
+        puts('Book created successfully!')
+        run
+      end
 end
 
